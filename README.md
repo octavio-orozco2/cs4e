@@ -5,15 +5,16 @@ one you've done to date. Now you will be recording orders to a database.
 The following commands are to be executed on your EC2 remote machine.
 
 ```sh
-git clone https://github.com/octavio-orozco2/cs4e.git
-```
-Es necesario, salir y entrar de nuevo para que se activen las variables
-definidas en los dotfiles.
-
-```sh
+git clone git@github.com:octavio-orozco2/cs4e.git
 cd cs4e
 ./setup-ssjs.sh
 ```
+Rembember to logout and log back in, to enable node with packages:
+
+```sh
+exit 
+```
+
 
 Local and Remote Testing
 ========================
