@@ -50,15 +50,21 @@ do the `.env` step above.
 
 3. For remote servers, deploy and push configuration variables
 
+Using only one branch:
+
 ```sh
 git push heroku master
 heroku config:push
 ```
 
-You should now go to Heroku and change the default name of the heroku app
-to `cs4e`.
+Using three branches:
+```sh
+git push staging-heroku staging:master
+git push production-heroku master:master
+```
 
-Then you can go to a URL like http://cs4e.herokuapp.com and submit
-orders to test it out. Note again that you will get an "invalid api key"
+Then you can go to a URL like http://cs4e.herokuapp.com or to
+http://www.cs4e.com and submit orders to test it out.
+Note again that you will get an "invalid api key"
 error if you didn't do the `.env` step above.
 

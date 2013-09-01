@@ -8,7 +8,11 @@ echo -e "\n\nNOW ENTER YOUR HEROKU PASSWORD"
 # - devcenter.heroku.com/articles/config-vars
 # - devcenter.heroku.com/articles/heroku-postgresql
 heroku login
-heroku create
+#Para versión simple, sólo con la rama de master
+#heroku create
+#Para versión con tres ramas develop, staging y production
+heroku apps:create oo2-bitstarter-s-mooc --remote staging-heroku
+heroku apps:create cs4e --remote production-heroku
 #Es innecesario volver a crear las llaves de ssh, porque se ejecutó
 #ya al crear la máquina virtual, con la opción adicional -C "email".
 #ssh-keygen -t rsa
@@ -45,9 +49,13 @@ Now do the following:\n\n
    Then check your EC2 URL, e.g. ec2-54-213-131-228.us-west-2.compute.amazonaws.com:8080 \n
    Try placing some orders and then clicking '/orders' at the top.\n\n
 4) To deploy to heroku\n
+4.1) Using only one branch\n
      $ git push heroku master\n
      $ heroku config:push\n
-   Then check the corresponding Heroku URL\n\n
+4.2) Using three branches\n
+     $ git push staging-heroku staging:master\n
+     $ git push production-heroku master:master\n
+5) Then check the corresponding Heroku URL\n\n
    Try placing some orders and then clicking '/orders' at the top.\n
 EOF
 )
