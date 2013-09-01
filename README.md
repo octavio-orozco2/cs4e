@@ -19,6 +19,7 @@ Local and Remote Testing
 ========================
 Once you have done this you will need to :
  
+
 1. Update the `.env` file. You either copy the `.env` file which already includes the API key and port number:
 
 ```bash
@@ -33,6 +34,7 @@ http://coinbase.com/account/integrations so that it looks like this:
 COINBASE_API_KEY=cb27e2ef0a8e872f792612d4d57937e70476ab8041455b00b35d1196cf80f50d
 PORT=8080
 ```
+
 
 2. Then you can run the server locally and preview at URLs like http://ec2-54-213-131-228.us-west-2.compute.amazonaws.com:8080 as follows:
 
