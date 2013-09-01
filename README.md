@@ -19,16 +19,13 @@ Local and Remote Testing
 ========================
 Once you have done this you will need to :
  
-1. Update the `.env` file
-
-You either copy the `.env` file which already includes the API key and port number
+1. Update the `.env` file. You either copy the `.env` file which already includes the API key and port number:
 
 ```bash
 [you@local cs4e repo] $ scp .env h1:~/cs4e
 ```
 
-
-Or you edit the `.env` file to include your API key from
+or you edit the `.env` file to include your API key from
 http://coinbase.com/account/integrations so that it looks like this:
 
 ```bash
