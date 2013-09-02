@@ -17,8 +17,14 @@ heroku apps:create cs4e --remote production-heroku
 #ya al crear la máquina virtual, con la opción adicional -C "email".
 #ssh-keygen -t rsa
 heroku keys:add
-heroku addons:add heroku-postgresql:dev
-heroku pg:promote `heroku config  | grep HEROKU_POSTGRESQL | cut -f1 -d':'`
+#Para versión con una sola rama:
+#heroku addons:add heroku-postgresql:dev
+#heroku pg:promote `heroku config  | grep HEROKU_POSTGRESQL | cut -f1 -d':'`
+#heroku plugins:install git://github.com/ddollar/heroku-config.git
+heroku addons:add heroku-postgresql:dev --app oo2-bitstarter-s-mooc
+heroku addons:add heroku-postgresql:dev --app cs4e  
+heroku pg:promote `heroku config --app oo2-bitstarter-s-mooc  | grep HEROKU_POSTGRESQL | cut -f1 -d':'` --app oo2-bitstarter-s-mooc
+heroku pg:promote `heroku config --app cs4e  | grep HEROKU_POSTGRESQL | cut -f1 -d':'` --app cs4e
 heroku plugins:install git://github.com/ddollar/heroku-config.git
 
 # Set up heroku configuration variables
@@ -53,10 +59,10 @@ Now do the following:\n\n
      $ git push heroku master\n
      $ heroku config:push\n
 4.2) Using three branches\n
-     $ git push staging-heroku staging:master\n
-     $ git push production-heroku master:master\n
      $ heroku config:push --remote staging-heroku\n
      $ heroku config:push --remote production-heroku\n
+     $ git push staging-heroku staging:master\n
+     $ git push production-heroku master:master\n
 
 5) Then check the corresponding Heroku URL\n\n
    Try placing some orders and then clicking '/orders' at the top.\n

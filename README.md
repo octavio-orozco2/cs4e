@@ -59,6 +59,8 @@ heroku config:push
 
 Using three branches:
 ```sh
+heroku config:push --remote staging-heroku
+heroku config:push --remote production-heroku
 git push staging-heroku staging:master
 git push production-heroku master:master
 ```
