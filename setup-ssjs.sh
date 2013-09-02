@@ -55,6 +55,9 @@ Now do the following:\n\n
 4.2) Using three branches\n
      $ git push staging-heroku staging:master\n
      $ git push production-heroku master:master\n
+     $ heroku config:push --remote staging-heroku\n
+     $ heroku config:push --remote production-heroku\n
+
 5) Then check the corresponding Heroku URL\n\n
    Try placing some orders and then clicking '/orders' at the top.\n
 EOF
