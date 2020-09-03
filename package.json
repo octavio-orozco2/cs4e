@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "sequelize": "~2.0.0-alpha2",
+    "sequelize": "~6.3.5",
     "pg": "~2.3.1",
     "ejs": "~0.8.4",
     "express": ">=3.11.0",
