@@ -70,3 +70,27 @@ http://www.cs4e.com and submit orders to test it out.
 Note again that you will get an "invalid api key"
 error if you didn't do the `.env` step above.
 
+Actualizar versiones de paquetes con Dependabot
+===============================================
+
+GitHub provides a built-in tool called **Dependabot** that automatically scans your `package.json` file and creates Pull Requests whenever an update is available.
+
+#### Setup Steps
+
+1. Navigate to your repository on **GitHub**.
+2. Click on the **Settings** tab.
+3. In the left sidebar, click on **Code security and analysis**.
+4. Find **Dependabot version updates** and click **Enable**.
+5. GitHub will prompt you to create a configuration file. 
+
+Create a file named `.github/dependabot.yml` in your repository and paste the following configuration to check for npm updates every week:
+
+```yaml
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+```
+
